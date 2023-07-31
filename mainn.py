@@ -107,7 +107,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 app = Flask(__name__)
 app.secret_key = 'your secret key'  # Replace with your secret key
@@ -133,7 +133,7 @@ def get_text_chunks(text):
     return chunks
 
 def get_vectorstore(chunks):
-    os.environ["OPENAI_API_KEY"]="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"
+    os.environ["OPENAI_API_KEY"]="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" 
     embeddings = OpenAIEmbeddings()
     vectorstore = FAISS.from_texts(texts=chunks, embedding=embeddings)
     return vectorstore
