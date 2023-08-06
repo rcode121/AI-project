@@ -37,15 +37,16 @@ from db import init_db_command
 from user import User
 
 # Configuration
-GOOGLE_CLIENT_ID = "569662328285-i4a3tq7v7ipapo5dfj8n0vdlfjaesmld.apps.googleusercontent.com"
-GOOGLE_CLIENT_SECRET = "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"
+config = dotenv.dotenv_values(".env")
+openai.api_key = config['OPENAI_API_KEY']
+
+
+GOOGLE_CLIENT_ID = config['GOOGLE_CLIENT_ID']
+GOOGLE_CLIENT_SECRET = config['GOOGLE_CLIENT_SECRET']
 GOOGLE_DISCOVERY_URL = (
     "https://accounts.google.com/.well-known/openid-configuration"
 )
 
-
-config = dotenv.dotenv_values(".env")
-openai.api_key = config['OPENAI_API_KEY']
 
 
 
