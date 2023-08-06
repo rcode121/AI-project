@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+        body {
+            font-family: 'Roboto Mono', monospace;
+            display: flex;
+            align-items: center;
+            background-color: #1a1a1a;
+            background-image: url('static/images/bg.jpg');
+            background-size: cover;
+            justify-content: space-between;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .login-container {
+            text-align: center;
+            background: #eedcdc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(247, 246, 214, 0.836);
+            position: relative;
+            z-index: 1;
+            width: 30%;
+            animation: appear 1s;
+        }
+        .description-container {
+            padding: 40px;
+            color: white;
+            width: 25%;
+            line-height: 1.5;
+            height: 90%;
+            border-radius: 10px;
+            text-align: left;
+            overflow: auto;
+            font-size: 11px;
+        }
+        @keyframes appear {
+            from {opacity: 0; transform: translateY(-20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        .button-google {
+            display: flex;
+            align-items: center;
+            background: #4285F4;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .button-google:hover {
+            background: #2a69f0;
+        }
+        .google-logo {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .login-input {
+            position: relative;
+        }
+        .login-input input[type="password"] {
+            padding-right: 40px;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="description-container">
+        <!-- Your description content here -->
+        <h2>About AIChatBox by Ritesh</h2>
+        <p>Your go-to destination for intelligent PDF interrogation and direct question-answering!</p>
+            <h3>PDF Interrogation</h3>
+            <p>Ever found yourself with a mountain of PDFs and specific questions about the content within? With AIChatBox by Ritesh, you no longer have to shift through endless pages to find your answers. Simply upload your PDF files, and our advanced AI will assist you in extracting the information you need. Whether it's data from a research paper, details from a contract, or insights from a report, our platform brings answers to your fingertips.</p>
+            <!-- Add the rest of the description here -->
+            <h3>How It Works:</h3>
+            <ul>
+                <li>Upload PDF: Select the PDF file you wish to query.</li>
+                <li>Ask Questions: Type your specific questions related to the uploaded PDF.</li>
+                <li>Get Answers: Receive accurate and instant answers extracted directly from the document.</li>
+            </ul>
+            <h3>Direct Chat with GPT</h3>
+            <p>No PDF? No problem! If you don't have a specific document to query but still have questions on various topics, you can engage directly with our cutting-edge GPT model. Whether you need assistance with academic studies, professional insights, or simply want to explore various subjects, our intelligent chat interface will provide concise and informed responses.</p>
+             <!-- Add more description as needed -->
+
+
+    </div>
+    <div class="login-container">
+        <h1>Login</h1>
+        <p>Please log in to continue</p>
+        <div class="login-input">
+            <input type="text" placeholder="Username" class="form-control mb-3" />
+        </div>
+        <div class="login-input">
+            <input type="password" id="password" placeholder="Password" class="form-control mb-3" />
+            <span class="toggle-password fas fa-eye" onclick="togglePassword()"></span>
+        </div>
+        <a class="button-google" href="/login">
+            <img class="google-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo">
+            Google Login
+        </a>
+    </div>
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const togglePasswordIcon = document.querySelector('.toggle-password');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                togglePasswordIcon.classList.remove('fa-eye');
+                togglePasswordIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                togglePasswordIcon.classList.remove('fa-eye-slash');
+                togglePasswordIcon.classList.add('fa-eye');
+            }
+        }
+    </script>
+</body>
+</html>
